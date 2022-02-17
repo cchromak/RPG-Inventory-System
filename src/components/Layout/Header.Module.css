@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 6rem;
+    height: 3rem;
     background-color: #8a2b06;
     color: white;
     display: flex;
@@ -13,13 +13,20 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 10;
   }
-  
-  .header img {
-    width: 80px;
-    height: 80px;
+
+  .title {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .title img {
+    height: 40px;
     object-fit: cover;
     border-radius: 50%;
+    margin: 10px;
   }
+  
 
   .header h2 {
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif

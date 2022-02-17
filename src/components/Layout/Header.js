@@ -5,11 +5,13 @@ import TallyCounter from "../UI/TallyCounter";
 
 const Header = (props) => {
   return (
-      <header className={classes.header}>
+    <header className={classes.header}>
+      <div className={classes.title}>
         <img src={banthaExpress} alt="bantha express"></img>
-        <h1>Otopia Wars: The Ryes of Matza</h1>
-        <TallyCounter />
-      </header>
+        <h2>Otopia Wars: The Ryes of Matza</h2>
+      </div>
+      <TallyCounter />
+    </header>
   );
 };
 
