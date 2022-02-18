@@ -8,10 +8,10 @@ import classes from "./Players.Module.css";
 
 const Players = (props) => {
   const players = props.DUMMY_PLAYERS.map((player) => (
-    <Player name={player.name} key={player.id} quote={player.quote} />
+    <Player name={player.name} key={player.id} quote={player.quote} stats={player.stats} />
   ));
-
   return (
+
     <section className={classes.players}>
       <Card>
         {players}

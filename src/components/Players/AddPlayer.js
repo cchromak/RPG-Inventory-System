@@ -22,6 +22,7 @@ const AddPlayer = (props) => {
       name: name,
       quote: quote,
       id: Math.random(),
+      stats: {}
     };
 
     props.onAddPlayer(newPlayer);

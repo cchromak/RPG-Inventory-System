@@ -11,14 +11,30 @@ function App() {
       name: "Belmont Kin",
       items: [{ name: "oh", count: 5 }],
       image: "belmont.jpg",
-      quote: "where there is one of us, there is at least one of us."
+      stats: {
+        Dexterity: "2d + 1",
+        Knowledge: "2d + 1",
+        Mechanical: "2d",
+        Perception: "2d + 1",
+        Strength: "3d",
+        Technical: "2d",
+      },
+      quote: "where there is one of us, there is at least one of us.",
     },
     {
       id: "p2",
       name: "Belmont Kin",
       items: [{ name: "oh", count: 5 }],
       image: "belmont.jpg",
-      quote: "how do you turn this recorder on? its on?"
+      stats: {
+        Dexterity: "9d + 1",
+        Knowledge: "2d + 1",
+        Mechanical: "2d",
+        Perception: "2d + 1",
+        Strength: "3d",
+        Technical: "2d",
+      },
+      quote: "how do you turn this recorder on? its on?",
     },
   ];
 
@@ -42,7 +58,12 @@ function App() {
 
   return (
     <Fragment>
-      {viewAddPlayer && <AddPlayer onHidePlayer={hideAddPlayerHandler} onAddPlayer={addPlayerHandler}/>}
+      {viewAddPlayer && (
+        <AddPlayer
+          onHidePlayer={hideAddPlayerHandler}
+          onAddPlayer={addPlayerHandler}
+        />
+      )}
       <Header />
       <main>
         <Players DUMMY_PLAYERS={players} onViewPlayer={viewAddPlayerHandler} />
