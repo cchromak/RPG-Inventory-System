@@ -156,7 +156,7 @@ const AddPlayer = (props) => {
           </div>
           
           <div>
-            <Button onClick={props.onHidePlayer} title="Cancel" />
+            <Button  onClick={props.onHidePlayer} title="Cancel" />
             <Button type="submit" onClick={submitHandler} title="Add" />
           </div>
         </div>
