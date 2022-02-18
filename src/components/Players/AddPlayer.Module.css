@@ -1,6 +1,6 @@
 .new-players__controls {
-    /* display: flex;
-    flex-wrap: wrap; */
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-bottom: 1rem;
     text-align: left;
@@ -10,7 +10,7 @@
   .new-players__control label {
     font-weight: bold;
     margin-bottom: 0.5rem;
-    display: block;
+    display: inline-block;
   }
   
   .new-players__control input {
