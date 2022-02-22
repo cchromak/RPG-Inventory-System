@@ -16,11 +16,9 @@ const AddPlayer = (props) => {
   const nameChangeHandler = (event) => {
     setName(event.target.value);
   };
-
   const quoteChangeHandler = (event) => {
     setQuote(event.target.value);
   };
-
   const dexterityChangeHandler = (event) => {
       setDexterity(event.target.value);
   }
@@ -73,93 +71,93 @@ const AddPlayer = (props) => {
   return (
     <Modal onHidePlayer={props.onHidePlayer}>
       <form onSubmit={submitHandler}>
-        <div className={classes["new-players__controls"]}>
+
           <div className={classes["new-players__control"]}>
-            <label htmlFor="name">Name:</label>
             <input
               type="text"
               id="name"
               name="name"
+              placeholder="Name"
               value={name}
               onChange={nameChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="quote">Quote:</label>
             <input
               type="text"
               id="quote"
               name="quote"
+              placeholder="Quote"
               value={quote}
               onChange={quoteChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="dexterity">Dexterity:</label>
             <input
               type="text"
               id="dexterity"
               name="dexterity"
+              placeholder="Dexterity"
               value={dexterity}
               onChange={dexterityChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="knowledge">Knowledge:</label>
             <input
               type="text"
               id="knowledge"
               name="knowledge"
+              placeholder="Knowledge"
               value={knowledge}
               onChange={knowledgeChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="mechanical">Mechanical:</label>
             <input
               type="text"
               id="mechanical"
               name="mechanical"
+              placeholder="Mechanical"
               value={mechanical}
               onChange={mechanicalChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="perception">Perception:</label>
             <input
               type="text"
               id="perception"
               name="perception"
+              placeholder="Percetion"
               value={perception}
               onChange={perceptionChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="strength">Strength:</label>
             <input
               type="text"
               id="strength"
               name="strength"
+              placeholder="Strength"
               value={strength}
               onChange={strengthChangeHandler}
             />
           </div>
           <div className={classes["new-players__control"]}>
-            <label htmlFor="technical">Technical:</label>
             <input
               type="text"
               id="technical"
               name="technical"
+              placeholder="Technical"
               value={technical}
               onChange={technicalChangeHandler}
             />
           </div>
           
-          <div>
+          <div className={classes["new-players__control"]} >
             <Button  onClick={props.onHidePlayer} title="Cancel" />
             <Button type="submit" onClick={submitHandler} title="Add" />
           </div>
-        </div>
+
       </form>
     </Modal>
   );
