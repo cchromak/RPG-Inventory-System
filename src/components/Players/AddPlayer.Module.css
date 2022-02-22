@@ -7,6 +7,11 @@
     overflow: auto;
   }
   
+  .new-players__control {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
   .new-players__control input {
     font: inherit;
     padding: 0.5rem;
@@ -14,13 +19,18 @@
     border-radius: 6px;
     border: 1px solid #ccc;
     width: 20rem;
-
+    max-width: 100%;
   }
   
   .new-players__actions {
     text-align: right;
   }
 
-  .button {
-    display: inline;
+  .error {
+    background-color: rgb(255, 185, 185);
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: auto;
   }
