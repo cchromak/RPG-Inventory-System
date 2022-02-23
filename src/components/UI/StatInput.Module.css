@@ -1,0 +1,16 @@
+.new-players__control_stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+  }
+
+  .new-players__control_stat input {
+    font: inherit;
+    padding: 0.5rem;
+    margin: 0.3rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 6rem;
+    max-width: 100%;
+  }
