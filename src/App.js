@@ -9,7 +9,7 @@ function App() {
     {
       id: "p1",
       name: "Belmont Kin",
-      items: [{ name: "oh", count: 5 }],
+      items: { name: "oh", count: 5 },
       image: "belmont.jpg",
       stats: {
         Dexterity: "2d + 1",
@@ -24,7 +24,7 @@ function App() {
     {
       id: "p2",
       name: "Belmont Kin",
-      items: [{ name: "oh", count: 5 }],
+      items: { name: "oh", count: 5 },
       image: "belmont.jpg",
       stats: {
         Dexterity: "9d + 1",

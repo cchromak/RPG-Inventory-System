@@ -12,6 +12,7 @@ const Players = (props) => {
       key={player.id}
       quote={player.quote}
       stats={player.stats}
+      items={player.items}
     />
   ));
 
