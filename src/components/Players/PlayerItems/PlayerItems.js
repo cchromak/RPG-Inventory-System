@@ -18,7 +18,11 @@ const PlayerItems = (props) => {
       <div className={classes.items}>
         <ul>{playerItems}</ul>
         <ItemInput />
-        <Button onClick={props.onHideItems} title="Exit" />
+        <div className={classes.button}>
+          <Button onClick={props.onHideItems} title="Exit" />
+          <Button onClick={props.onHideItems} title="Update" className="blue"/>
+          <Button onClick={props.onHideItems} title="+ Add" className="green" />
+        </div>
       </div>
     </Modal>
   );

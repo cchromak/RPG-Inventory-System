@@ -1,3 +1,10 @@
 .items {
     width: 17rem;
 }
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    margin: 6px;
+    padding: 3px;
+}
