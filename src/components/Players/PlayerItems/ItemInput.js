@@ -14,6 +14,7 @@ const ItemInput = (props) => {
         className={classes.number}
         type="number"
         placeholder="Count"
+        min={1}
         value={props.itemCountValue}
         onChange={props.onItemCountChangeHandler}
       ></input>

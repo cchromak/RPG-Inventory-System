@@ -51,20 +51,27 @@ function App() {
 
   const raiseItemCountHandler = (id, itemName) => {
     const prevPlayers = [...players];
-    const currPlayer = prevPlayers.filter((player) => 
-      player.id === id
-    );
+    const currPlayer = prevPlayers.filter((player) => player.id === id);
     currPlayer[0].items[itemName]++;
     setPlayers(prevPlayers);
   };
 
   const lowerItemCountHandler = (id, itemName) => {
     const prevPlayers = [...players];
-    const currPlayer = prevPlayers.filter((player) => 
-      player.id === id
-    );
-    currPlayer[0].items[itemName]--;
-    setPlayers(prevPlayers);
+    const currPlayer = prevPlayers.filter((player) => player.id === id);
+    if (currPlayer[0].items[itemName] > 1) {
+      currPlayer[0].items[itemName]--;
+      setPlayers(prevPlayers);
+    } else {
+      currPlayer[0].items[itemName]--;
+      setPlayers(prevPlayers);
+      const newPrevPlayers = [...players];
+    const newCurrPlayer = newPrevPlayers.filter((player) => player.id === id);
+      setTimeout(() => {
+        delete newCurrPlayer[0].items[itemName];
+        setPlayers(newPrevPlayers);
+      }, 1000);;
+    }
   };
 
   const onAddNewItem = (id, newItem) => {
