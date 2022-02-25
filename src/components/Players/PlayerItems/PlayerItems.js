@@ -21,6 +21,7 @@ const PlayerItems = (props) => {
 
   const [itemName, setItemName] = useState("");
   const [itemCount, setItemCount] = useState("");
+  const [showError, setShowError] = useState(false);
 
   const itemNameChangeHandler = (event) => {
     setItemName(event.target.value);
@@ -32,6 +33,11 @@ const PlayerItems = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
+    if (itemCount.length === 0 || itemName.length === 0) {
+      setShowError(true);
+      return;
+    }
+    setShowError(false);
     let newItem = { name: itemName, count: itemCount };
     props.addNewItem(props.id, newItem);
     setItemName("");
@@ -40,6 +46,7 @@ const PlayerItems = (props) => {
 
   return (
     <Modal>
+      {showError &&  <p className={classes.error}>Missing information</p> }
       <div onSubmit={submitHandler} className={classes.items}>
         {playerItems}
         <ItemInput

@@ -39,7 +39,7 @@
 
 @keyframes remove-item {
     25% {
-        margin: 3px;
+        padding: 4px;
     }
     
     100% {

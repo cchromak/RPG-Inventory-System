@@ -13,3 +13,12 @@
     margin: 6px;
     padding: 3px;
 }
+
+.error {
+    background-color: rgb(255, 185, 185);
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: auto;
+  }

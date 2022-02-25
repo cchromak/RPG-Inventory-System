@@ -126,7 +126,7 @@ const AddPlayer = (props) => {
   return (
     <Modal onHidePlayer={props.onHidePlayer}>
       {error ? (
-        <p className={classes.error}>Please fill out entire form.</p>
+        <p className={classes.error}>Missing information</p>
       ) : (
         ""
       )}
