@@ -6,7 +6,7 @@ const StatInput = (props) => {
   return (
     <div className={classes["new-players__control_stat"]}>
       <label>{props.label}</label>
-      <div>
+      <div className={classes.input}>
         <input
           type="number"
           id={props.name}

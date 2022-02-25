@@ -10,15 +10,19 @@ const Players = (props) => {
     <Player
       name={player.name}
       key={player.id}
+      id={player.id}
       quote={player.quote}
       stats={player.stats}
       items={player.items}
+      addNewItem={props.addNewItem}
+      lowerItemCount={props.lowerItemCount}
+      raiseItemCount={props.raiseItemCount}
     />
   ));
-
   return (
     <section className={classes.players}>
       <Card>
+
         {players}
         <Button onClick={props.onViewPlayer} title="Add player" />
       </Card>

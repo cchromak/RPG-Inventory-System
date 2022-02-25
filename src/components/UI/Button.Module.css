@@ -10,7 +10,6 @@
     justify-content: flex-start ;
     align-items: center;
     border-radius: 25px;
-    font-weight: bold;
     height: 25px;
     margin-top: 11px;
     margin-left: 5px;
@@ -23,5 +22,10 @@
 
 .blue {
   background-color: rgb(141, 141, 247);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .40);
+}
+
+.red {
+  background-color: rgb(247, 141, 141);
   box-shadow: 0 2px 8px rgba(0, 0, 0, .40);
 }

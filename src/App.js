@@ -9,7 +9,7 @@ function App() {
     {
       id: "p1",
       name: "Belmont Kin",
-      items: { name: "oh", count: 5 },
+      items: { Kethcup: 3, Pencils: 2 },
       image: "belmont.jpg",
       stats: {
         Dexterity: "2d + 1",
@@ -24,7 +24,7 @@ function App() {
     {
       id: "p2",
       name: "Belmont Kin",
-      items: { name: "oh", count: 5 },
+      items: { Bread: 8, "Space juice": 5 },
       image: "belmont.jpg",
       stats: {
         Dexterity: "9d + 1",
@@ -49,6 +49,31 @@ function App() {
     setViewAddPlayer(false);
   };
 
+  const raiseItemCountHandler = (id, itemName) => {
+    const prevPlayers = [...players];
+    const currPlayer = prevPlayers.filter((player) => 
+      player.id === id
+    );
+    currPlayer[0].items[itemName]++;
+    setPlayers(prevPlayers);
+  };
+
+  const lowerItemCountHandler = (id, itemName) => {
+    const prevPlayers = [...players];
+    const currPlayer = prevPlayers.filter((player) => 
+      player.id === id
+    );
+    currPlayer[0].items[itemName]--;
+    setPlayers(prevPlayers);
+  };
+
+  const onAddNewItem = (id, newItem) => {
+    const prevPlayers = [...players];
+    const currPlayer = prevPlayers.filter((player) => player.id === id);
+    currPlayer[0].items[newItem.name] = newItem.count;
+    setPlayers(prevPlayers);
+  };
+
   const addPlayerHandler = (player) => {
     setViewAddPlayer(false);
     setPlayers((prevPlayers) => {
@@ -66,7 +91,13 @@ function App() {
       )}
       <Header />
       <main>
-        <Players DUMMY_PLAYERS={players} onViewPlayer={viewAddPlayerHandler} />
+        <Players
+          DUMMY_PLAYERS={players}
+          addNewItem={onAddNewItem}
+          onViewPlayer={viewAddPlayerHandler}
+          lowerItemCount={lowerItemCountHandler}
+          raiseItemCount={raiseItemCountHandler}
+        />
       </main>
     </Fragment>
   );

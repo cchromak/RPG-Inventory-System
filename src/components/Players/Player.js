@@ -36,7 +36,16 @@ const Player = (props) => {
           <PlayerStats stats={props.stats} />
         </div>
       </section>
-      {viewItems && <PlayerItems items={props.items} onHideItems={onHideItems} />}
+      {viewItems && (
+        <PlayerItems
+          id={props.id}
+          items={props.items}
+          onHideItems={onHideItems}
+          addNewItem={props.addNewItem}
+          lowerItemCount={props.lowerItemCount}
+          raiseItemCount={props.raiseItemCount}
+        />
+      )}
     </React.Fragment>
   );
 };
