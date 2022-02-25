@@ -33,7 +33,9 @@ const Player = (props) => {
           </div>
         </div>
         <div>
-          <PlayerStats stats={props.stats} />
+          <PlayerStats
+            stats={props.stats}
+          />
         </div>
       </section>
       {viewItems && (

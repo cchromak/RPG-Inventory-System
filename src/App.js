@@ -14,7 +14,7 @@ function App() {
       stats: {
         Dexterity: "2d + 1",
         Knowledge: "2d + 1",
-        Mechanical: "2d",
+        Mechanical: "1d",
         Perception: "2d + 1",
         Strength: "3d",
         Technical: "2d",
