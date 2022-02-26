@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Player from "./Player";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
@@ -6,6 +6,29 @@ import Button from "../UI/Button";
 import classes from "./Players.Module.css";
 
 const Players = (props) => {
+  const [rollLog, setRollLog] = useState([]);
+  const [viewRollLog, setViewRollLog] = useState(false);
+
+  const onViewRollLog = () => {
+    setViewRollLog(true);
+  };
+  const onHideRollLog = () => {
+    setViewRollLog(false);
+  };
+
+  const postRollLogHandler = (value, name, date, playerName) => {
+    let newRollLog = {
+      date: date,
+      name: name,
+      value: value,
+      playerName: playerName,
+    };
+    setRollLog((prevRollLog) => {
+      prevRollLog.push(newRollLog);
+      return prevRollLog;
+    });
+  };
+
   const players = props.DUMMY_PLAYERS.map((player) => (
     <Player
       name={player.name}
@@ -17,14 +40,20 @@ const Players = (props) => {
       addNewItem={props.addNewItem}
       lowerItemCount={props.lowerItemCount}
       raiseItemCount={props.raiseItemCount}
+      postRollLog={postRollLogHandler}
+      rollLog={rollLog}
+      onHideRollLog={onHideRollLog}
+      viewRollLog={viewRollLog}
     />
   ));
   return (
     <section className={classes.players}>
       <Card>
-
         {players}
-        <Button onClick={props.onViewPlayer} title="Add player" />
+        <div className={classes["button-controls"]}>
+          <Button onClick={props.onViewPlayer} title="Add player" />
+          <Button className="blue" title="Roll log" onClick={onViewRollLog} />
+        </div>
       </Card>
     </section>
   );

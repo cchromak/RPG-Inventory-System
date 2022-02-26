@@ -11,6 +11,12 @@
     margin: 0;
     padding: 0;
   }
+
+  .button-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin:  0 15px;
+}
   
   @keyframes players-appear {
     from {

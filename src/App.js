@@ -8,7 +8,7 @@ function App() {
   const DUMMY_PLAYERS = [
     {
       id: "p1",
-      name: "Belmont Kin",
+      name: "Bart Simpson",
       items: { Kethcup: 3, Pencils: 2 },
       image: "belmont.jpg",
       stats: {

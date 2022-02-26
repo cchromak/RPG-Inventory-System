@@ -11,6 +11,8 @@ const StatInput = (props) => {
           type="number"
           id={props.name}
           name={props.name}
+          min={1}
+          max={9}
           placeholder="Dice"
           value={props.diceValue}
           onChange={props.onDiceChangeHandler}
@@ -19,6 +21,8 @@ const StatInput = (props) => {
           type="number"
           id={props.name}
           name={props.name}
+          min={0}
+          max={9}
           placeholder="Bonus"
           value={props.bonusValue}
           onChange={props.onBonusChangeHandler}

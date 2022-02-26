@@ -13,12 +13,16 @@
 }
 
 
+
 .player img {
     width: 145px;
     height: 145px;
     margin: 10px;
-    border-style: solid;
+    border: none;
     border-radius: 10px;
-    border-width: 1px;
-    border-color: grey;
+}
+
+.button-controls {
+    display: flex;
+    justify-content: flex-start;
 }

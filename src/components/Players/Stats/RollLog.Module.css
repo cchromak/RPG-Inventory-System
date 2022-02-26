@@ -1,0 +1,15 @@
+.roll-log {
+    display: flex;
+    justify-content: space-between;
+}
+
+.roll-item {
+    margin: 0 5px 0 5px;
+    padding: 0 5px 0 5px;
+}
+
+.scrollable {
+    overflow:auto;
+    height:300px;
+    width:450px
+}
