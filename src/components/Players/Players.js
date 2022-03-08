@@ -44,6 +44,7 @@ const Players = (props) => {
       rollLog={rollLog}
       onHideRollLog={onHideRollLog}
       viewRollLog={viewRollLog}
+      journal={player.journal}
     />
   ));
   return (

@@ -20,6 +20,7 @@ function App() {
         Technical: "2d",
       },
       quote: "where there is one of us, there is at least one of us.",
+      journal: [{date: "1/22/2022", entry: "I feel pretty badass today."}]
     },
     {
       id: "p2",
@@ -35,7 +36,13 @@ function App() {
         Technical: "2d",
       },
       quote: "how do you turn this recorder on? its on?",
-    },
+      journal: [{date: "1/22/2022", entry: "I feel pretty cool today"},
+      {date: "1/22/2022", entry: "I feel pretty cool today"},
+      {date: "1/22/2022", entry: "I feel pretty cool today"},
+      {date: "1/22/2022", entry: "I feel pretty cool today"},
+      {date: "1/22/2022", entry: "I feel pretty cool today"},
+      {date: "1/22/2022", entry: "I feel pretty cool today"}]
+    }
   ];
 
   const [viewAddPlayer, setViewAddPlayer] = useState(false);
