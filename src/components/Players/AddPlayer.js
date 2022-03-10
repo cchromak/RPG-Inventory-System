@@ -100,10 +100,12 @@ const AddPlayer = (props) => {
     };
 
     const newPlayer = {
+      id: Math.random(),
       name: name,
       quote: quote,
-      id: Math.random(),
       stats: stats,
+      items: {},
+      journal: []
     };
 
     props.onAddPlayer(newPlayer);
