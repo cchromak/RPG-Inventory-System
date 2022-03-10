@@ -1,5 +1,11 @@
 .scrollable {
     overflow:auto;
     height:300px;
-    width:550px
+    width:550px;
+    margin-bottom: 20px;
+}
+
+.button-controls {
+    display: flex;
+    justify-content: flex-start;
 }

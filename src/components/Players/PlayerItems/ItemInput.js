@@ -5,6 +5,7 @@ const ItemInput = (props) => {
   return (
     <div className={classes["new-players__control_stat"]}>
       <input
+        autoFocus
         type="string"
         placeholder="Item Name"
         value={props.itemNameValue}

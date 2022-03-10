@@ -96,7 +96,7 @@ const AddPlayer = (props) => {
       Mechanical: formatStatForDisplay(mechanicalDice, mechanicalBonus),
       Perception: formatStatForDisplay(perceptionDice, perceptionBonus),
       Strength: formatStatForDisplay(strengthDice, strengthBonus),
-      Technical: formatStatForDisplay(technicalDice, technicalBonus)
+      Technical: formatStatForDisplay(technicalDice, technicalBonus),
     };
 
     const newPlayer = {
@@ -125,14 +125,11 @@ const AddPlayer = (props) => {
 
   return (
     <Modal onHidePlayer={props.onHidePlayer}>
-      {error ? (
-        <p className={classes.error}>Missing information</p>
-      ) : (
-        ""
-      )}
+      {error ? <p className={classes.error}>Missing information</p> : ""}
       <form onSubmit={submitHandler}>
         <div className={classes["new-players__control"]}>
           <input
+            autoFocus
             type="text"
             id="name"
             name="name"

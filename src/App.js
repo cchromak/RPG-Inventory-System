@@ -20,7 +20,7 @@ function App() {
         Technical: "2d",
       },
       quote: "where there is one of us, there is at least one of us.",
-      journal: [{date: "1/22/2022", entry: "I feel pretty badass today."}]
+      journal: [{ date: "1/22/2022", entry: "I feel pretty badass today." }],
     },
     {
       id: "p2",
@@ -36,13 +36,15 @@ function App() {
         Technical: "2d",
       },
       quote: "how do you turn this recorder on? its on?",
-      journal: [{date: "1/22/2022", entry: "I feel pretty cool today"},
-      {date: "1/22/2022", entry: "I feel pretty cool today"},
-      {date: "1/22/2022", entry: "I feel pretty cool today"},
-      {date: "1/22/2022", entry: "I feel pretty cool today"},
-      {date: "1/22/2022", entry: "I feel pretty cool today"},
-      {date: "1/22/2022", entry: "I feel pretty cool today"}]
-    }
+      journal: [
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
+      ],
+    },
   ];
 
   const [viewAddPlayer, setViewAddPlayer] = useState(false);
@@ -63,6 +65,19 @@ function App() {
     setPlayers(prevPlayers);
   };
 
+  const addEntryHandler = (id, entry) => {
+    const prevPlayers = [...players];
+    const currPlayer = prevPlayers.filter((player) => player.id === id);
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth() + 1; 
+    const year = date.getFullYear();
+    const formattedDate = month + "/" + day + "/" + year;
+    const newEntry = { date: formattedDate, entry: entry };
+    currPlayer[0].journal.push(newEntry);
+    setPlayers(prevPlayers);
+  };
+
   const lowerItemCountHandler = (id, itemName) => {
     const prevPlayers = [...players];
     const currPlayer = prevPlayers.filter((player) => player.id === id);
@@ -73,11 +88,11 @@ function App() {
       currPlayer[0].items[itemName]--;
       setPlayers(prevPlayers);
       const newPrevPlayers = [...players];
-    const newCurrPlayer = newPrevPlayers.filter((player) => player.id === id);
+      const newCurrPlayer = newPrevPlayers.filter((player) => player.id === id);
       setTimeout(() => {
         delete newCurrPlayer[0].items[itemName];
         setPlayers(newPrevPlayers);
-      }, 1000);;
+      }, 1000);
     }
   };
 
@@ -111,6 +126,7 @@ function App() {
           onViewPlayer={viewAddPlayerHandler}
           lowerItemCount={lowerItemCountHandler}
           raiseItemCount={raiseItemCountHandler}
+          onAddEntry={addEntryHandler}
         />
       </main>
     </Fragment>

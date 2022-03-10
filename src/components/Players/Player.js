@@ -60,7 +60,14 @@ const Player = (props) => {
           playerName={props.name}
         />
       )}
-      {viewJournal && <PlayerJournal journal={props.journal} onHideJournal={onHideJournal} />}
+      {viewJournal && (
+        <PlayerJournal
+          id={props.id}
+          journal={props.journal}
+          onHideJournal={onHideJournal}
+          onAddEntry={props.onAddEntry}
+        />
+      )}
       {viewItems && (
         <PlayerItems
           id={props.id}
