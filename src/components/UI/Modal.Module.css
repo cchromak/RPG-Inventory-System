@@ -19,6 +19,11 @@
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
   }
+
+  .lower-top {
+    top: 45%;
+    background-color: lightgrey;
+  }
   
   @media (min-width: 768px) {
     .modal {

@@ -8,3 +8,8 @@
     display: flex;
     justify-content: flex-start;
 }
+
+.entry {
+    height:120px;
+    width:450px;
+}
