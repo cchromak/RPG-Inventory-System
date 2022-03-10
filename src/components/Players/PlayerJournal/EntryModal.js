@@ -22,6 +22,7 @@ const EntryModal = (props) => {
       <div className={classes.entry}>
         <textarea
           autoFocus
+          onFocus={(e)=>e.currentTarget.setSelectionRange(e.currentTarget.value.length, e.currentTarget.value.length)}
           className={classes["text-area"]}
           onChange={onSetEntryHandler}
           value={entry}

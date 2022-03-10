@@ -27,7 +27,7 @@ const PlayerJournal = (props) => {
   };
 
   const entries = props.journal.map((entry, index) => (
-    <JournalEntry date={entry.date} day={index + 1} entry={entry.entry} onEditEntry={onEditEntryHandler}/>
+    <JournalEntry key={index} date={entry.date} day={index + 1} entry={entry.entry} onEditEntry={onEditEntryHandler}/>
   ));
   return (
     <Modal>
