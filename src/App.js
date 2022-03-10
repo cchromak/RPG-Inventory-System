@@ -65,16 +65,44 @@ function App() {
     setPlayers(prevPlayers);
   };
 
-  const addEntryHandler = (id, entry) => {
+  // const addEntryHandler = (id, entry, position) => {
+  //   const prevPlayers = [...players];
+  //   const currPlayer = prevPlayers.filter((player) => player.id === id);
+  //   const date = new Date();
+  //   const day = date.getDate();
+  //   const month = date.getMonth() + 1;
+  //   const year = date.getFullYear();
+  //   const formattedDate = month + "/" + day + "/" + year;
+  //   const newEntry = { date: formattedDate, entry: entry };
+  //   if (position != null) {
+  //     currPlayer[0].journal[position].entry = entry;
+  //   } else {
+  //   currPlayer[0].journal.push(newEntry);
+  //   }
+  //   setPlayers(prevPlayers);
+  // };
+
+  const addEntryHandler = (id, entry, position) => {
     const prevPlayers = [...players];
     const currPlayer = prevPlayers.filter((player) => player.id === id);
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1; 
-    const year = date.getFullYear();
-    const formattedDate = month + "/" + day + "/" + year;
-    const newEntry = { date: formattedDate, entry: entry };
-    currPlayer[0].journal.push(newEntry);
+    if (position == null) {
+      const date = new Date();
+      const day = date.getDate();
+      const month = date.getMonth() + 1;
+      const year = date.getFullYear();
+      const formattedDate = month + "/" + day + "/" + year;
+      const newEntry = { date: formattedDate, entry: entry };
+      currPlayer[0].journal.push(newEntry);
+    } else {
+      if (entry.trim().length === 0) {
+        let updatedJournal = currPlayer[0].journal.filter(
+          (value, index) => index !== position
+        );
+        currPlayer[0].journal = updatedJournal;
+      } else {
+        currPlayer[0].journal[position].entry = entry;
+      }
+    }
     setPlayers(prevPlayers);
   };
 

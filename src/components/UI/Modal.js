@@ -9,7 +9,6 @@ const Backdrop = (props) => {
 
 const ModalOverlay = (props) => {
   const classProps = classes[props.class] + " " + classes.modal;
-  console.log(classProps);
   return (
     <div className={classProps}>
       <div className={classes.content}>{props.children}</div>

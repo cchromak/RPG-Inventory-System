@@ -5,14 +5,14 @@ import Modal from "../../UI/Modal";
 import classes from "./EntryModal.Module.css";
 
 const EntryModal = (props) => {
-  const [entry, setEntry] = useState("");
+  const [entry, setEntry] = useState(props.value);
 
   const onSetEntryHandler = (event) => {
     setEntry(event.target.value);
   };
 
   const onAddEntryHandler = () => {
-    props.onAddEntry(props.id, entry);
+    props.onAddEntry(props.id, entry, props.position);
     setEntry("");
     props.onHideEntryModal();
   };
