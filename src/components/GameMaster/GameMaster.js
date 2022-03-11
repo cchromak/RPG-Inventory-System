@@ -15,8 +15,9 @@ const GameMaster = (props) => {
           </div>
           <div>
             <div className={classes["button-controls"]}>
-              <Button title="Notes" />
+              <Button className="green" title="Notes" />
               <Button className="blue" title="Journal" />
+              <Button onClick={props.onViewPlayer} className="light-grey" title="Add player" />
             </div>
             <div className={classes["player-name-quote"]}>
               <h3>{props.name}</h3>

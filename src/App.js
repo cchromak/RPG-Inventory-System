@@ -6,13 +6,12 @@ import AddPlayer from "./components/Players/AddPlayer";
 import Players from "./components/Players/Players";
 
 function App() {
-
   const GAME_MASTER = {
     name: "GM Tom",
     quote: "A very funny quote.",
     image: "transformer.jpg",
-  }
-  
+  };
+
   const DUMMY_PLAYERS = [
     {
       id: "p1",
@@ -46,7 +45,7 @@ function App() {
       quote: "How do you turn this recorder on? its on?",
       journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" }
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
       ],
     },
     {
@@ -65,7 +64,7 @@ function App() {
       quote: "Time? No, I don't have the time to tell you the time.",
       journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" }
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
       ],
     },
     {
@@ -81,10 +80,11 @@ function App() {
         Strength: "3d",
         Technical: "3d",
       },
-      quote: "Best ska waves listed in order: 3rd, 1st, tie between 7th and 6th, 2nd, 5th, and we don't talk about the 4th. Freeking furries.",
+      quote:
+        "Best ska waves listed in order: 3rd, 1st, tie between 7th and 6th, 2nd, 5th, and we don't talk about the 4th. Freeking furries.",
       journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" }
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
       ],
     },
     {
@@ -100,10 +100,11 @@ function App() {
         Strength: "2d + 2",
         Technical: "4d",
       },
-      quote: "I make my own toothpaste. What do yo do with your discarded orange peals?",
+      quote:
+        "I make my own toothpaste. What do yo do with your discarded orange peals?",
       journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" }
+        { date: "1/22/2022", entry: "I feel pretty cool today" },
       ],
     },
   ];
@@ -192,11 +193,15 @@ function App() {
       )}
       <Header />
       <main>
-        <GameMaster name={GAME_MASTER.name} quote={GAME_MASTER.quote} image={GAME_MASTER.image}></GameMaster>
+        <GameMaster
+          name={GAME_MASTER.name}
+          quote={GAME_MASTER.quote}
+          image={GAME_MASTER.image}
+          onViewPlayer={viewAddPlayerHandler}
+        ></GameMaster>
         <Players
           DUMMY_PLAYERS={players}
           addNewItem={onAddNewItem}
-          onViewPlayer={viewAddPlayerHandler}
           lowerItemCount={lowerItemCountHandler}
           raiseItemCount={raiseItemCountHandler}
           onAddEntry={addEntryHandler}

@@ -104,6 +104,7 @@ const AddPlayer = (props) => {
       name: name,
       quote: quote,
       stats: stats,
+      image: "belmont.jpg",
       items: {},
       journal: [],
     };

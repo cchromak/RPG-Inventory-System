@@ -54,7 +54,7 @@ const Players = (props) => {
       <Card>
         {players}
         <div className={classes["button-controls"]}>
-          <Button onClick={props.onViewPlayer} title="Add player" />
+          
           <Button className="blue" title="Roll log" onClick={onViewRollLog} />
         </div>
       </Card>

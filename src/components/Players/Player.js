@@ -33,9 +33,9 @@ const Player = (props) => {
           </div>
           <div>
             <div className={classes["button-controls"]}>
-              <Button title="Items" onClick={onViewItems} />
+              <Button className="green" title="Items" onClick={onViewItems} />
               <Button
-                className="green"
+                className="blue"
                 title="Journal"
                 onClick={onViewJournal}
               />
