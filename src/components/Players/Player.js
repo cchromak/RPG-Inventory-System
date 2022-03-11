@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classes from "./Player.Module.css";
-import belmont from "../../assets/belmont.jpg";
 import PlayerStats from "./Stats/PlayerStats";
 import Button from "../UI/Button";
 import PlayerItems from "./PlayerItems/PlayerItems";
@@ -30,7 +29,7 @@ const Player = (props) => {
       <section className={classes.player}>
         <div className={classes["player-title"]}>
           <div>
-            <img src={belmont} alt={props.image}></img>
+            <img src={require(`../../assets/${props.image}`).default} alt={props.image}></img>
           </div>
           <div>
             <div className={classes["button-controls"]}>
@@ -41,8 +40,10 @@ const Player = (props) => {
                 onClick={onViewJournal}
               />
             </div>
-            <h3>{props.name}</h3>
-            <p>{props.quote}</p>
+            <div className={classes["player-name-quote"]}>
+              <h3>{props.name}</h3>
+              <p>{props.quote}</p>
+            </div>
           </div>
         </div>
         <div>

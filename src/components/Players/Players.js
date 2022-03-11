@@ -34,6 +34,7 @@ const Players = (props) => {
       name={player.name}
       key={player.id}
       id={player.id}
+      image={player.image}
       quote={player.quote}
       stats={player.stats}
       items={player.items}

@@ -1,14 +1,13 @@
 .new-players__control_stat {
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-between;
     align-items: center;
     padding: 0 10px 0 10px;
-    width: 5rem;
   }
 
   .input {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
   }
   
   .new-players__control_stat input{

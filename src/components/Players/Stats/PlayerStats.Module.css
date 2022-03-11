@@ -2,12 +2,15 @@
     font-family: arial, sans-serif;
     border-collapse: collapse;
     margin: 2px;
+    width: 145px;
   }
 
   td {
     border: 1px solid #dddddd;
     text-align: left;
     padding: 3px;
+    min-width: 50px;
+    text-align: center;
   }
 
   .button {

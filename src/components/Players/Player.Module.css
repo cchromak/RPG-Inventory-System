@@ -10,9 +10,19 @@
 .player-title {
     display: flex;
     justify-content: flex-start;
+    max-width: 525px;
 }
 
+.player-name-quote {
+    margin-left: 5px;
+}
 
+.player-name-quote p {
+    margin: 0;
+}
+.player-name-quote h3 {
+    margin: 14px 0px 8px 0px;
+}
 
 .player img {
     width: 145px;

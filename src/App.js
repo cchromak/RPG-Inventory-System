@@ -1,48 +1,109 @@
 import React, { useState } from "react";
 import { Fragment } from "react/cjs/react.production.min";
+import GameMaster from "./components/GameMaster/GameMaster";
 import Header from "./components/Layout/Header";
 import AddPlayer from "./components/Players/AddPlayer";
 import Players from "./components/Players/Players";
 
 function App() {
+
+  const GAME_MASTER = {
+    name: "GM Tom",
+    quote: "A very funny quote.",
+    image: "transformer.jpg",
+  }
+  
   const DUMMY_PLAYERS = [
     {
       id: "p1",
-      name: "Bart Simpson",
-      items: { Kethcup: 3, Pencils: 2 },
+      name: "Belmont Kin",
+      items: { Ketchup: 3, Pencils: 2 },
       image: "belmont.jpg",
       stats: {
         Dexterity: "2d + 1",
-        Knowledge: "2d + 1",
-        Mechanical: "1d",
-        Perception: "2d + 1",
-        Strength: "3d",
-        Technical: "2d",
-      },
-      quote: "where there is one of us, there is at least one of us.",
-      journal: [{ date: "1/22/2022", entry: "I feel pretty badass today." }],
-    },
-    {
-      id: "p2",
-      name: "Belmont Kin",
-      items: { Bread: 8, "Space juice": 5 },
-      image: "belmont.jpg",
-      stats: {
-        Dexterity: "9d + 1",
-        Knowledge: "2d + 1",
+        Knowledge: "3d + 1",
         Mechanical: "2d",
         Perception: "2d + 1",
         Strength: "3d",
         Technical: "2d",
       },
-      quote: "how do you turn this recorder on? its on?",
+      quote: "Where there is one of us, there is at least one of us.",
+      journal: [{ date: "1/22/2022", entry: "I feel pretty badass today." }],
+    },
+    {
+      id: "p2",
+      name: "Melba Montilet",
+      items: { Bread: 8, "Space juice": 5 },
+      image: "belmont.jpg",
+      stats: {
+        Dexterity: "2d + 1",
+        Knowledge: "4d",
+        Mechanical: "3d",
+        Perception: "2d",
+        Strength: "3d",
+        Technical: "3d + 1",
+      },
+      quote: "How do you turn this recorder on? its on?",
       journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" }
+      ],
+    },
+    {
+      id: "p3",
+      name: "Renlock",
+      items: { Bread: 8, "Space juice": 5 },
+      image: "belmont.jpg",
+      stats: {
+        Dexterity: "2d + 2",
+        Knowledge: "3d",
+        Mechanical: "3d + 2",
+        Perception: "3d + 1",
+        Strength: "2d + 1",
+        Technical: "3d",
+      },
+      quote: "Time? No, I don't have the time to tell you the time.",
+      journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" }
+      ],
+    },
+    {
+      id: "p4",
+      name: "Rye Mat-Za",
+      items: { Bread: 8, "Space juice": 5 },
+      image: "belmont.jpg",
+      stats: {
+        Dexterity: "3d",
+        Knowledge: "2d",
+        Mechanical: "4d",
+        Perception: "3d",
+        Strength: "3d",
+        Technical: "3d",
+      },
+      quote: "Best ska waves listed in order: 3rd, 1st, tie between 7th and 6th, 2nd, 5th, and we don't talk about the 4th. Freeking furries.",
+      journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" }
+      ],
+    },
+    {
+      id: "p5",
+      name: "Totes Rando",
+      items: { Bread: 8, "Space juice": 5 },
+      image: "belmont.jpg",
+      stats: {
+        Dexterity: "2d + 1",
+        Knowledge: "4d",
+        Mechanical: "2d + 2",
+        Perception: "2d + 1",
+        Strength: "2d + 2",
+        Technical: "4d",
+      },
+      quote: "I make my own toothpaste. What do yo do with your discarded orange peals?",
+      journal: [
         { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" },
-        { date: "1/22/2022", entry: "I feel pretty cool today" },
+        { date: "1/22/2022", entry: "I feel pretty cool today" }
       ],
     },
   ];
@@ -64,23 +125,6 @@ function App() {
     currPlayer[0].items[itemName]++;
     setPlayers(prevPlayers);
   };
-
-  // const addEntryHandler = (id, entry, position) => {
-  //   const prevPlayers = [...players];
-  //   const currPlayer = prevPlayers.filter((player) => player.id === id);
-  //   const date = new Date();
-  //   const day = date.getDate();
-  //   const month = date.getMonth() + 1;
-  //   const year = date.getFullYear();
-  //   const formattedDate = month + "/" + day + "/" + year;
-  //   const newEntry = { date: formattedDate, entry: entry };
-  //   if (position != null) {
-  //     currPlayer[0].journal[position].entry = entry;
-  //   } else {
-  //   currPlayer[0].journal.push(newEntry);
-  //   }
-  //   setPlayers(prevPlayers);
-  // };
 
   const addEntryHandler = (id, entry, position) => {
     const prevPlayers = [...players];
@@ -148,6 +192,7 @@ function App() {
       )}
       <Header />
       <main>
+        <GameMaster name={GAME_MASTER.name} quote={GAME_MASTER.quote} image={GAME_MASTER.image}></GameMaster>
         <Players
           DUMMY_PLAYERS={players}
           addNewItem={onAddNewItem}

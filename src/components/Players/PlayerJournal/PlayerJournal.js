@@ -31,7 +31,7 @@ const PlayerJournal = (props) => {
   ));
   return (
     <Modal>
-      <div className={classes.scrollable}>{entries}</div>
+      <div className={classes.scrollable}>{props.journal.length === 0 ? <p>Your journey has yet to begin.</p> : entries }</div>
       {viewEntryModal && (
         <EntryModal
           onHideEntryModal={hideEntryModalHandler}

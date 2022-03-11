@@ -16,7 +16,7 @@ const RollLog = (props) => {
   return (
     <Modal>
       <div className={classes.scrollable}>
-        <div>{rollLog}</div>
+        <div>{props.rollLog.length === 0 ? <p>Roll Log is Empty</p> : rollLog}</div>
       </div>
       <Button onClick={props.onHideRollLog} title="Exit" className="red" />
     </Modal>

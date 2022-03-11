@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-
 import classes from "./PlayerStats.Module.css";
 
 const PlayerStats = (props) => {
   const [currRoll, setCurrRoll] = useState("");
 
   const timeOutForCurrentRoll = (diceRoll) => {
-    setCurrRoll(<div className={classes.roll}>{diceRoll}</div>)
+    setCurrRoll(<div className={classes.roll}>{diceRoll}</div>);
     setTimeout(() => {
       setCurrRoll("");
     }, 2000);

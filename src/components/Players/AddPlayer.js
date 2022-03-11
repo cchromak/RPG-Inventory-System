@@ -105,7 +105,7 @@ const AddPlayer = (props) => {
       quote: quote,
       stats: stats,
       items: {},
-      journal: []
+      journal: [],
     };
 
     props.onAddPlayer(newPlayer);
@@ -199,8 +199,13 @@ const AddPlayer = (props) => {
           onBonusChangeHandler={technicalBonusChangeHandler}
         />
         <div className={classes["new-players__control"]}>
-          <Button onClick={props.onHidePlayer} title="Cancel" />
-          <Button type="submit" onClick={submitHandler} title="Add" />
+          <Button onClick={props.onHidePlayer} title="Cancel" className="red" />
+          <Button
+            type="submit"
+            onClick={submitHandler}
+            title="Add"
+            className="green"
+          />
         </div>
       </form>
     </Modal>
