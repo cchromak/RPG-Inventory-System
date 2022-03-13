@@ -10,6 +10,7 @@ function App() {
     name: "GM Tom",
     quote: "A very funny quote.",
     image: "transformer.jpg",
+    notes: ""
   };
 
   const DUMMY_PLAYERS = [
@@ -111,6 +112,9 @@ function App() {
 
   const [viewAddPlayer, setViewAddPlayer] = useState(false);
   const [players, setPlayers] = useState(DUMMY_PLAYERS);
+  const [gameMaster, setGameMaster] = useState(GAME_MASTER);
+  const [rollLog, setRollLog] = useState([]);
+  const [viewRollLog, setViewRollLog] = useState(false);
 
   const viewAddPlayerHandler = () => {
     setViewAddPlayer(true);
@@ -118,6 +122,35 @@ function App() {
 
   const hideAddPlayerHandler = () => {
     setViewAddPlayer(false);
+  };
+
+  const onViewRollLog = () => {
+    setViewRollLog(true);
+  };
+  const onHideRollLog = () => {
+    setViewRollLog(false);
+  };
+
+  const onSaveNotesHandler = (notes) => {
+    setGameMaster(prevMaster => {
+      let newMaster = { ...prevMaster };
+      newMaster.notes = notes;
+      return newMaster;
+    })
+   
+  }
+
+  const postRollLogHandler = (value, name, date, playerName) => {
+    let newRollLog = {
+      date: date,
+      name: name,
+      value: value,
+      playerName: playerName,
+    };
+    setRollLog((prevRollLog) => {
+      prevRollLog.push(newRollLog);
+      return prevRollLog;
+    });
   };
 
   const raiseItemCountHandler = (id, itemName) => {
@@ -194,10 +227,13 @@ function App() {
       <Header />
       <main>
         <GameMaster
-          name={GAME_MASTER.name}
-          quote={GAME_MASTER.quote}
-          image={GAME_MASTER.image}
+          name={gameMaster.name}
+          quote={gameMaster.quote}
+          image={gameMaster.image}
+          notes={gameMaster.notes}
           onViewPlayer={viewAddPlayerHandler}
+          onViewRollLog={onViewRollLog}
+          onSaveNotes={onSaveNotesHandler}
         ></GameMaster>
         <Players
           DUMMY_PLAYERS={players}
@@ -205,6 +241,10 @@ function App() {
           lowerItemCount={lowerItemCountHandler}
           raiseItemCount={raiseItemCountHandler}
           onAddEntry={addEntryHandler}
+          postRollLogHandler={postRollLogHandler}
+          rollLog={rollLog}
+          onHideRollLog={onHideRollLog}
+          viewRollLog={viewRollLog}
         />
       </main>
     </Fragment>

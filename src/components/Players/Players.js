@@ -1,33 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
 import Player from "./Player";
 import Card from "../UI/Card";
-import Button from "../UI/Button";
+
 
 import classes from "./Players.Module.css";
 
 const Players = (props) => {
-  const [rollLog, setRollLog] = useState([]);
-  const [viewRollLog, setViewRollLog] = useState(false);
+  // const [rollLog, setRollLog] = useState([]);
+  // const [viewRollLog, setViewRollLog] = useState(false);
 
-  const onViewRollLog = () => {
-    setViewRollLog(true);
-  };
-  const onHideRollLog = () => {
-    setViewRollLog(false);
-  };
+  // const onViewRollLog = () => {
+  //   setViewRollLog(true);
+  // };
+  // const onHideRollLog = () => {
+  //   setViewRollLog(false);
+  // };
 
-  const postRollLogHandler = (value, name, date, playerName) => {
-    let newRollLog = {
-      date: date,
-      name: name,
-      value: value,
-      playerName: playerName,
-    };
-    setRollLog((prevRollLog) => {
-      prevRollLog.push(newRollLog);
-      return prevRollLog;
-    });
-  };
+  // const postRollLogHandler = (value, name, date, playerName) => {
+  //   let newRollLog = {
+  //     date: date,
+  //     name: name,
+  //     value: value,
+  //     playerName: playerName,
+  //   };
+  //   setRollLog((prevRollLog) => {
+  //     prevRollLog.push(newRollLog);
+  //     return prevRollLog;
+  //   });
+  // };
 
   const players = props.DUMMY_PLAYERS.map((player) => (
     <Player
@@ -41,10 +41,10 @@ const Players = (props) => {
       addNewItem={props.addNewItem}
       lowerItemCount={props.lowerItemCount}
       raiseItemCount={props.raiseItemCount}
-      postRollLog={postRollLogHandler}
-      rollLog={rollLog}
-      onHideRollLog={onHideRollLog}
-      viewRollLog={viewRollLog}
+      postRollLog={props.postRollLogHandler}
+      rollLog={props.rollLog}
+      onHideRollLog={props.onHideRollLog}
+      viewRollLog={props.viewRollLog}
       journal={player.journal}
       onAddEntry={props.onAddEntry}
     />
@@ -55,7 +55,7 @@ const Players = (props) => {
         {players}
         <div className={classes["button-controls"]}>
           
-          <Button className="blue" title="Roll log" onClick={onViewRollLog} />
+          {/* <Button className="blue" title="Roll log" onClick={onViewRollLog} /> */}
         </div>
       </Card>
     </section>
