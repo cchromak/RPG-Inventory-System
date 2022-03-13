@@ -1,0 +1,12 @@
+.expanded-image {
+    position: fixed;
+    top: 5%;
+    margin-left: 10%;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    z-index: 30;
+    animation: slide-down 300ms ease-out forwards;
+    overflow:auto;
+    max-height:  600px;
+  }

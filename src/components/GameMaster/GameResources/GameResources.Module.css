@@ -1,0 +1,6 @@
+.scrollable {
+    overflow:auto;
+    max-height:250px;
+    width:450px;
+    margin-bottom: 20px;
+}

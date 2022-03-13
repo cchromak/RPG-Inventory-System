@@ -34,7 +34,7 @@ function App() {
       id: "p2",
       name: "Melba Montilet",
       items: { Bread: 8, "Space juice": 5 },
-      image: "belmont.jpg",
+      image: "melba.jpg",
       stats: {
         Dexterity: "2d + 1",
         Knowledge: "4d",
@@ -53,7 +53,7 @@ function App() {
       id: "p3",
       name: "Renlock",
       items: { Bread: 8, "Space juice": 5 },
-      image: "belmont.jpg",
+      image: "renlock.jpg",
       stats: {
         Dexterity: "2d + 2",
         Knowledge: "3d",
@@ -72,7 +72,7 @@ function App() {
       id: "p4",
       name: "Rye Mat-Za",
       items: { Bread: 8, "Space juice": 5 },
-      image: "belmont.jpg",
+      image: "rye.jpg",
       stats: {
         Dexterity: "3d",
         Knowledge: "2d",
