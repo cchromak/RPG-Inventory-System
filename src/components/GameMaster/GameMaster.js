@@ -3,7 +3,7 @@ import Button from "../UI/Button";
 import Card from "../UI/Card";
 
 import classes from "./GameMaster.Module.css";
-import GameResources from "./GameResources/GameResource";
+import GameResources from "./GameResources/GameResources";
 import Notes from "./Notes/Notes";
 
 const GameMaster = (props) => {
@@ -22,14 +22,6 @@ const GameMaster = (props) => {
   const onHideResourcesHandler = () => {
     setShowResources(false);
   };
-
-  const re = [
-    { image: "shipFloorPlan.jpg", title: "Ship Floor Plan" },
-    { image: "belmont.jpg", title: "belmont" },
-    { image: "belmont.jpg", title: "belmont" },
-    { image: "belmont.jpg", title: "belmont" },
-    { image: "belmont.jpg", title: "belmont" },
-  ];
 
   return (
     <section className={classes["game-master"]}>
@@ -73,7 +65,7 @@ const GameMaster = (props) => {
         </div>
         {showResources && (
           <GameResources
-            gameResources={re}
+            gameResources={props.resources}
             onHideResources={onHideResourcesHandler}
           />
         )}

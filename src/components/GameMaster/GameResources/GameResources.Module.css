@@ -1,6 +1,12 @@
 .scrollable {
+    display: flex;
+    justify-content: flex-start;
     overflow:auto;
-    max-height:250px;
-    width:450px;
-    margin-bottom: 20px;
+    max-height:350px;
+    max-width:500px;
+}
+
+.button-controls {
+    display: flex;
+    justify-content: flex-start;
 }

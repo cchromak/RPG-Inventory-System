@@ -10,7 +10,14 @@ function App() {
     name: "GM Tom",
     quote: "A very funny quote.",
     image: "transformer.jpg",
-    notes: ""
+    notes: "",
+    resources: [
+      { image: "shipFloorPlan.jpg", title: "Ship Floor Plan" },
+      { image: "belmont.jpg", title: "belmont" },
+      { image: "belmont.jpg", title: "belmont" },
+      { image: "belmont.jpg", title: "belmont" },
+      { image: "belmont.jpg", title: "belmont" },
+    ],
   };
 
   const DUMMY_PLAYERS = [
@@ -51,7 +58,7 @@ function App() {
     },
     {
       id: "p3",
-      name: "Renlock",
+      name: "Renlock Helfan",
       items: { Bread: 8, "Space juice": 5 },
       image: "renlock.jpg",
       stats: {
@@ -132,13 +139,12 @@ function App() {
   };
 
   const onSaveNotesHandler = (notes) => {
-    setGameMaster(prevMaster => {
+    setGameMaster((prevMaster) => {
       let newMaster = { ...prevMaster };
       newMaster.notes = notes;
       return newMaster;
-    })
-   
-  }
+    });
+  };
 
   const postRollLogHandler = (value, name, date, playerName) => {
     let newRollLog = {
@@ -216,6 +222,7 @@ function App() {
     });
   };
 
+
   return (
     <Fragment>
       {viewAddPlayer && (
@@ -231,6 +238,7 @@ function App() {
           quote={gameMaster.quote}
           image={gameMaster.image}
           notes={gameMaster.notes}
+          resources={gameMaster.resources}
           onViewPlayer={viewAddPlayerHandler}
           onViewRollLog={onViewRollLog}
           onSaveNotes={onSaveNotesHandler}

@@ -6,28 +6,6 @@ import Card from "../UI/Card";
 import classes from "./Players.Module.css";
 
 const Players = (props) => {
-  // const [rollLog, setRollLog] = useState([]);
-  // const [viewRollLog, setViewRollLog] = useState(false);
-
-  // const onViewRollLog = () => {
-  //   setViewRollLog(true);
-  // };
-  // const onHideRollLog = () => {
-  //   setViewRollLog(false);
-  // };
-
-  // const postRollLogHandler = (value, name, date, playerName) => {
-  //   let newRollLog = {
-  //     date: date,
-  //     name: name,
-  //     value: value,
-  //     playerName: playerName,
-  //   };
-  //   setRollLog((prevRollLog) => {
-  //     prevRollLog.push(newRollLog);
-  //     return prevRollLog;
-  //   });
-  // };
 
   const players = props.DUMMY_PLAYERS.map((player) => (
     <Player
@@ -53,10 +31,6 @@ const Players = (props) => {
     <section className={classes.players}>
       <Card>
         {players}
-        <div className={classes["button-controls"]}>
-          
-          {/* <Button className="blue" title="Roll log" onClick={onViewRollLog} /> */}
-        </div>
       </Card>
     </section>
   );
