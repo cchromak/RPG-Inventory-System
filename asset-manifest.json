@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/cchromak/RPG-Inventory-System/static/css/main.9b0550d0.chunk.css",
+    "main.js": "/cchromak/RPG-Inventory-System/static/js/main.4ba58c0e.chunk.js",
+    "main.js.map": "/cchromak/RPG-Inventory-System/static/js/main.4ba58c0e.chunk.js.map",
+    "runtime-main.js": "/cchromak/RPG-Inventory-System/static/js/runtime-main.3e514ae6.js",
+    "runtime-main.js.map": "/cchromak/RPG-Inventory-System/static/js/runtime-main.3e514ae6.js.map",
+    "static/js/2.2ff3147e.chunk.js": "/cchromak/RPG-Inventory-System/static/js/2.2ff3147e.chunk.js",
+    "static/js/2.2ff3147e.chunk.js.map": "/cchromak/RPG-Inventory-System/static/js/2.2ff3147e.chunk.js.map",
+    "index.html": "/cchromak/RPG-Inventory-System/index.html",
+    "static/css/main.9b0550d0.chunk.css.map": "/cchromak/RPG-Inventory-System/static/css/main.9b0550d0.chunk.css.map",
+    "static/js/2.2ff3147e.chunk.js.LICENSE.txt": "/cchromak/RPG-Inventory-System/static/js/2.2ff3147e.chunk.js.LICENSE.txt",
+    "static/media/banthaExpress.jpg": "/cchromak/RPG-Inventory-System/static/media/banthaExpress.12cbc150.jpg",
+    "static/media/belmont.jpg": "/cchromak/RPG-Inventory-System/static/media/belmont.944a3251.jpg",
+    "static/media/campFire.svg": "/cchromak/RPG-Inventory-System/static/media/campFire.0036ce8d.svg",
+    "static/media/firebog-hearth-fire.svg": "/cchromak/RPG-Inventory-System/static/media/firebog-hearth-fire.b526c58d.svg",
+    "static/media/melba.jpg": "/cchromak/RPG-Inventory-System/static/media/melba.82017ca8.jpg",
+    "static/media/renlock.jpg": "/cchromak/RPG-Inventory-System/static/media/renlock.76b91cb6.jpg",
+    "static/media/rye.jpg": "/cchromak/RPG-Inventory-System/static/media/rye.eb9f07f3.jpg",
+    "static/media/shipFloorPlan.jpg": "/cchromak/RPG-Inventory-System/static/media/shipFloorPlan.a624e21c.jpg",
+    "static/media/transformer.jpg": "/cchromak/RPG-Inventory-System/static/media/transformer.16c99d17.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3e514ae6.js",
+    "static/js/2.2ff3147e.chunk.js",
+    "static/css/main.9b0550d0.chunk.css",
+    "static/js/main.4ba58c0e.chunk.js"
+  ]
+}
